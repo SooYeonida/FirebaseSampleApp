@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "679669841714",
+    "project_id": "sampleapp-6c5fe",
+    "storage_bucket": "sampleapp-6c5fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679669841714:android:45e83b24a283b95047212b",
+        "android_client_info": {
+          "package_name": "com.yoni.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679669841714-g96akgpfcc1v2ll8671if56i37hhol1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL35NVqNssUMYKXip7aiblOTFcuxnUOWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679669841714-g96akgpfcc1v2ll8671if56i37hhol1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
