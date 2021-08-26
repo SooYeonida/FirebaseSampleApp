@@ -8,23 +8,26 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.yoni.sample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        val btnJoin = findViewById<Button>(R.id.btnJoin)
-        btnJoin.setOnClickListener {
+        binding.btnJoin.setOnClickListener {
             auth.createUserWithEmailAndPassword("email@test.com", "pwd test")
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                       Toast.makeText(this,"join success",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"join success",Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this,"join fail",Toast.LENGTH_SHORT).show()
                     }
@@ -32,12 +35,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    public override fun onStart() {
-//        super.onStart()
-//        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = auth.currentUser
-//        if(currentUser != null){
-//            reload();
-//        }
-//    }
 }
