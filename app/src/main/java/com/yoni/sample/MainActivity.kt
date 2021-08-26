@@ -21,6 +21,9 @@ class MainActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+        //현재 회원가입한 사람의 uid 체크, 회원가입시 로그인도 포함.
+        Toast.makeText(this,auth.currentUser?.uid.toString(),Toast.LENGTH_SHORT).show()
+
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main);
 
         val email = binding.editEmail.text.toString()
@@ -36,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this,"join fail",Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+
+        binding.btnLogOut.setOnClickListener {
+            auth.signOut()
+            
         }
 
     }
