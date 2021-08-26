@@ -43,7 +43,19 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnLogOut.setOnClickListener {
             auth.signOut()
-            
+        }
+
+        binding.btnLogIn.setOnClickListener {
+            auth.signInWithEmailAndPassword(email, pwd)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Toast.makeText(this,"login success",Toast.LENGTH_SHORT).show()
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(this,"login fail",Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
 
     }
